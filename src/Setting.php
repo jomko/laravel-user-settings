@@ -225,7 +225,7 @@ class Setting {
             ->whereRaw($constraint_query)
             ->value($this->column);
 
-        $this->settings[$constraint_value] = json_decode($json, true);
+        $this->settings[$constraint_value] = json_decode((string)$json, true);
 
         $this->dirty[$constraint_value] = false;
         $this->loaded[$constraint_value] = true;
